@@ -1,0 +1,14 @@
+language: objective-c
+osx_image: xcode8.1
+xcode_project: TravisBuildExample.xcodeproj
+
+env:
+  global:
+  - PROJECT=TravisBuildExample.xcodeproj
+  - FRAMEWORK_SCHEME=TravisBuildExample
+  - SDK=iphonesimulator10.1
+  - DESTINATION_PLATFORM='platform=iOS Simulator,name=iPhone 6s,OS=10.1'
+
+script:
+- carthage bootstrap --platform iOS
+- set -o pipefail && xcodebuild -scheme "$FRAMEWORK_SCHEME" -project "$PROJECT" -sdk "$SDK" -configuration Debug ONLY_ACTIVE_ARCH=YES -destination "$DESTINATION_PLATFORM" clean test  | xcpretty -c

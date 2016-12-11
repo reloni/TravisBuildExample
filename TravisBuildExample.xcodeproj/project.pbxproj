@@ -10,6 +10,9 @@
 		6EDD0AB31DFDD5FF00766C62 /* TravisBuildExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDD0AA91DFDD5FF00766C62 /* TravisBuildExample.framework */; };
 		6EDD0AB81DFDD5FF00766C62 /* TravisBuildExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDD0AB71DFDD5FF00766C62 /* TravisBuildExampleTests.swift */; };
 		6EDD0ABA1DFDD5FF00766C62 /* TravisBuildExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EDD0AAC1DFDD5FF00766C62 /* TravisBuildExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EDD0AC41DFDD61000766C62 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDD0AC31DFDD61000766C62 /* Example.swift */; };
+		6EDD0AC71DFDD91300766C62 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDD0AC61DFDD91300766C62 /* RxSwift.framework */; };
+		6EDD0AC91DFDDA7000766C62 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDD0AC61DFDD91300766C62 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 		6EDD0AB21DFDD5FF00766C62 /* TravisBuildExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravisBuildExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDD0AB71DFDD5FF00766C62 /* TravisBuildExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravisBuildExampleTests.swift; sourceTree = "<group>"; };
 		6EDD0AB91DFDD5FF00766C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EDD0AC31DFDD61000766C62 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		6EDD0AC61DFDD91300766C62 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDD0AC71DFDD91300766C62 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDD0AC91DFDDA7000766C62 /* RxSwift.framework in Frameworks */,
 				6EDD0AB31DFDD5FF00766C62 /* TravisBuildExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +63,7 @@
 				6EDD0AAB1DFDD5FF00766C62 /* TravisBuildExample */,
 				6EDD0AB61DFDD5FF00766C62 /* TravisBuildExampleTests */,
 				6EDD0AAA1DFDD5FF00766C62 /* Products */,
+				6EDD0AC51DFDD91200766C62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +81,7 @@
 			children = (
 				6EDD0AAC1DFDD5FF00766C62 /* TravisBuildExample.h */,
 				6EDD0AAD1DFDD5FF00766C62 /* Info.plist */,
+				6EDD0AC31DFDD61000766C62 /* Example.swift */,
 			);
 			path = TravisBuildExample;
 			sourceTree = "<group>";
@@ -84,6 +93,14 @@
 				6EDD0AB91DFDD5FF00766C62 /* Info.plist */,
 			);
 			path = TravisBuildExampleTests;
+			sourceTree = "<group>";
+		};
+		6EDD0AC51DFDD91200766C62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EDD0AC61DFDD91300766C62 /* RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +142,7 @@
 				6EDD0AAE1DFDD5FF00766C62 /* Sources */,
 				6EDD0AAF1DFDD5FF00766C62 /* Frameworks */,
 				6EDD0AB01DFDD5FF00766C62 /* Resources */,
+				6E3507BF1DFDDAC200F3E081 /* Copy carthage frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +167,7 @@
 					6EDD0AA81DFDD5FE00766C62 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = SJMSRXG797;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					6EDD0AB11DFDD5FF00766C62 = {
@@ -193,11 +212,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6E3507BF1DFDDAC200F3E081 /* Copy carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = "Copy carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6EDD0AA41DFDD5FE00766C62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDD0AC41DFDD61000766C62 /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,18 +360,24 @@
 		6EDD0ABE1DFDD5FF00766C62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SJMSRXG797;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TravisBuildExample/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AntonEfimenko.TravisBuildExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,12 +385,17 @@
 		6EDD0ABF1DFDD5FF00766C62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SJMSRXG797;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TravisBuildExample/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -360,7 +409,12 @@
 		6EDD0AC11DFDD5FF00766C62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = SJMSRXG797;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TravisBuildExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AntonEfimenko.TravisBuildExampleTests;
@@ -372,7 +426,12 @@
 		6EDD0AC21DFDD5FF00766C62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = SJMSRXG797;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TravisBuildExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AntonEfimenko.TravisBuildExampleTests;
@@ -400,6 +459,7 @@
 				6EDD0ABF1DFDD5FF00766C62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EDD0AC01DFDD5FF00766C62 /* Build configuration list for PBXNativeTarget "TravisBuildExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +468,7 @@
 				6EDD0AC21DFDD5FF00766C62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
